@@ -60,10 +60,19 @@
 <script>
     window.addEventListener('keydown',function(e){
     console.log(e.keyCode);
+    const key=document.querySelector(`audio[data-key="${e.keyCode}"]`)
     const audio=document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if(!audio) return;
     audio.play();
+    key.addClassList.add('playing');
+    setTimeout(function())
+
 });
+functiom removeTransition(e){
+    if(e.propertyName !== 'transform') return;
+}
+const keys=document.querySelectorAll('.key');
+ keys.forEach(key => key.addEventListener('transitionend',removeTransition));
 </script>
 
 
